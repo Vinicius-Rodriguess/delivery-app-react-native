@@ -6,23 +6,24 @@ import { Banner } from "../components/banner";
 import { Search } from "../components/search";
 import { Section } from "../components/section";
 import { TrendingFoods } from "../components/trending";
+import { Restaurants } from "../components/restaurants";
 
 const statusBarHeight = Constants.statusBarHeight
 
 export default function Index() {
   return (
     <ScrollView 
-    style={{flex: 1}} 
-    className="bg-slate-200"
-    showsVerticalScrollIndicator={false}>
+      style={{ flex: 1 }} 
+      className="bg-slate-200" 
+      showsVerticalScrollIndicator={false}
+    >
+      <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
+        <Header/>
 
-    <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
-      <Header/>
+        <Banner/>
 
-      <Banner/>
-
-      <Search/>
-    </View>
+        <Search/>
+      </View>
 
       <Section
         name="Comidas em alta"
@@ -37,6 +38,15 @@ export default function Index() {
         name="Famosos no DevFood"
         label="Veja todos"
         action={ () => console.log("CLICOU NO Famosos")}
+        size="text-xl"
+      />
+
+      <Restaurants/>
+
+      <Section
+        name="Restaurantes"
+        label="Veja todos"
+        action={ () => console.log("CLICOU NO RESTAURANTES")}
         size="text-xl"
       />
 
